@@ -1,0 +1,31 @@
+<section class="container">
+    <h3 class="text-second my-3">Home >> Category</h3>
+
+    <div class="d-flex ">
+        <input type="text" [(ngModel)]="searchValue" (keyup)="onSearchInputChange()" class="form-controll w-75 mx-3 rounded-5 px-2 border-1" placeholder="Search...">
+        <button class="btn bg-main px-5 text-white rounded-5">Create</button>
+    </div>
+
+    <table class="table table-hover my-5">
+        <thead class="bg-second text-white">
+            <th class="rounded-left-top">ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Desc</th>
+            <th>Statues</th>
+            <th class="rounded-right-top">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categoryList">
+                <td>{{category.id}}</td>
+                <td>{{category.name}}</td>
+                <td>
+                    <img [src]="imagePath + category.image" [alt]="category.name" class="imgWidth">
+                </td>
+                <td>{{category.description}}</td>
+                <td>{{category.isDelete}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
